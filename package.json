@@ -1,0 +1,19 @@
+{
+  "name": "project-a-frontend-challange",
+  "version": "0.0.1",
+  "description": "This is my application to Project A's frontend coding challenge",
+  "main": "dist/index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonasSeegers/project-a-frontend-challange.git"
+  },
+  "author": "Jonas Seegers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonasSeegers/project-a-frontend-challange/issues"
+  },
+  "homepage": "https://github.com/JonasSeegers/project-a-frontend-challange#readme"
+}
