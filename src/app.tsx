@@ -1,3 +1,4 @@
 import React from "react";
+import { Input } from "./atoms/textinput";
 
-export const App: React.FC = () => <h1>Hello World</h1>;
+export const App: React.FC = () => <Input />;
