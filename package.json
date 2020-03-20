@@ -4,7 +4,8 @@
   "description": "This is my application to Project A's frontend coding challenge",
   "main": "dist/index.html",
   "scripts": {
-    "test": "test"
+    "test": "jest",
+    "dev": "webpack-dev-server  --open --config webpack.dev.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,21 @@
   "bugs": {
     "url": "https://github.com/JonasSeegers/project-a-frontend-challange/issues"
   },
-  "homepage": "https://github.com/JonasSeegers/project-a-frontend-challange#readme"
+  "homepage": "https://github.com/JonasSeegers/project-a-frontend-challange#readme",
+  "devDependencies": {
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "cache-loader": "^4.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
 }
