@@ -9,5 +9,8 @@ export const Box = styled("div")({
   ...getStylesForMinWidth(Breakpoints.tablet, {
     flex: "none",
     width: "80%"
+  }),
+  ...getStylesForMinWidth(Breakpoints.desktop, {
+    width: "70%"
   })
 });

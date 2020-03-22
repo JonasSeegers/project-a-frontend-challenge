@@ -7,18 +7,36 @@ export const InputsRow = styled("div")({
   flexDirection: "column",
   ...getStylesForMinWidth(Breakpoints.tablet, {
     flexDirection: "row-reverse"
+  }),
+  ...getStylesForMinWidth(Breakpoints.desktop, {
+    flexDirection: "row"
   })
 });
 
 export const LabeledInputsContainer = styled("div")({
   display: "flex",
   flexDirection: "column",
+  "& input": { margin: "0.75rem 0" }
+});
+
+export const EmailInputContainer = styled(LabeledInputsContainer)({
   ...getStylesForMinWidth(Breakpoints.tablet, {
-    flex: 1,
-    // keep in mind, that the first child will be displayed at the very right on tablet
-    // because of the row-reverse
-    ":first-child": {
-      marginLeft: "0.75rem"
-    }
+    gridColumn: "2 / 3",
+    gridRow: "1 / 1"
+  }),
+
+  ...getStylesForMinWidth(Breakpoints.desktop, {
+    gridColumn: "1 / 2"
+  })
+});
+
+export const PasswordInputContainer = styled(LabeledInputsContainer)({
+  ...getStylesForMinWidth(Breakpoints.tablet, {
+    gridColumn: "1 / 2",
+    gridRow: "1 / 1"
+  }),
+
+  ...getStylesForMinWidth(Breakpoints.desktop, {
+    gridColumn: "2 / 3"
   })
 });

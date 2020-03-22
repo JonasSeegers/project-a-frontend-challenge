@@ -7,12 +7,8 @@ import { Button } from "../../atoms/button";
 import { checkRules } from "../../utility/criteriaUtil";
 import { checkEmail } from "../../utility/emailUtils";
 import { passwordRules } from "../../config/passwordRules";
-import { InputsRow, LabeledInputsContainer } from "./inputs.style";
-import {
-  FormFooterRow,
-  FormFooterElementContainer,
-  FormFooterButtonContainer
-} from "./formFooter.style";
+import { EmailInputContainer, PasswordInputContainer } from "./inputs.style";
+import { ButtonContainer, CriteriaListContainer } from "./formFooter.style";
 
 interface LoginFormProps {
   onSubmit?(username: string, password: string): void;
@@ -30,48 +26,46 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
 
   return (
     <Form>
-      <InputsRow>
-        <LabeledInputsContainer>
-          <Label htmlFor="email">Email</Label>
-          <Input
-            value={emailValue}
-            id="email"
-            type="email"
-            name="email"
-            onChange={event => setEmailValue(event.target.value)}
-          />
-        </LabeledInputsContainer>
+      {/* <InputsRow> */}
+      <EmailInputContainer>
+        <Label htmlFor="email">Email</Label>
+        <Input
+          value={emailValue}
+          id="email"
+          type="email"
+          name="email"
+          onChange={event => setEmailValue(event.target.value)}
+        />
+      </EmailInputContainer>
 
-        <LabeledInputsContainer>
-          <Label htmlFor="password">Password</Label>
-          <Input
-            type="password"
-            name="password"
-            id="password"
-            value={pwValue}
-            onChange={event => setPwValue(event.target.value)}
-          />
-        </LabeledInputsContainer>
-      </InputsRow>
+      <PasswordInputContainer>
+        <Label htmlFor="password">Password</Label>
+        <Input
+          type="password"
+          name="password"
+          id="password"
+          value={pwValue}
+          onChange={event => setPwValue(event.target.value)}
+        />
+      </PasswordInputContainer>
 
-      <FormFooterRow>
-        <FormFooterElementContainer>
-          <CriteriaList
-            descriptions={passwordRules.map(rule => rule.description)}
-            fulfilledStates={checkedRules}
-          />
-        </FormFooterElementContainer>
+      {/* <FormFooterRow> */}
+      <CriteriaListContainer>
+        <CriteriaList
+          descriptions={passwordRules.map(rule => rule.description)}
+          fulfilledStates={checkedRules}
+        />
+      </CriteriaListContainer>
 
-        <FormFooterButtonContainer>
-          <Button
-            disabled={!isEveryCriteriaFulfilled || !isEmailValid}
-            type="button"
-            onClick={() => onSubmit && onSubmit(emailValue, pwValue)}
-          >
-            Submit
-          </Button>
-        </FormFooterButtonContainer>
-      </FormFooterRow>
+      <ButtonContainer>
+        <Button
+          disabled={!isEveryCriteriaFulfilled || !isEmailValid}
+          type="button"
+          onClick={() => onSubmit && onSubmit(emailValue, pwValue)}
+        >
+          Submit
+        </Button>
+      </ButtonContainer>
     </Form>
   );
 };
