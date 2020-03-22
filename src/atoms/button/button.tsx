@@ -5,7 +5,7 @@ export const Button = styled("button")({
   backgroundColor: "#000",
   color: "#fff",
   fontSize: Typography.copySize,
-  padding: "0.75rem",
+  padding: "1rem",
   outline: "none",
   border: 0,
   "&:hover": {

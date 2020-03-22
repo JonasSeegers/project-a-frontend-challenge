@@ -8,3 +8,7 @@ export const Colors = {
   succesColor: "#459840",
   errorColor: "#881a15"
 };
+
+export const Breakpoints = {
+  tablet: "768px"
+};

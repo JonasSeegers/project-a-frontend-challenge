@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "@emotion/styled";
-import {} from "";
 import { Colors } from "../../style/constants";
 
 interface CriteriaProps {

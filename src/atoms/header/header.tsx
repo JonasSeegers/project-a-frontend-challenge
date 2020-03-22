@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
-import { Typography } from "../../style/constants";
+import { Typography, Breakpoints } from "../../style/constants";
+import { getStylesForMinWidth } from "../../style/mediaQuery";
 
 export const Header = styled("header")({
   backgroundColor: "#000",
@@ -7,5 +8,9 @@ export const Header = styled("header")({
   padding: "1rem",
   fontSize: Typography.copySize,
   fontWeight: 200,
-  display: "flex"
+  display: "flex",
+  ...getStylesForMinWidth(Breakpoints.tablet, {
+    fontSize: Typography.h1Size,
+    justifyContent: "center"
+  })
 });
