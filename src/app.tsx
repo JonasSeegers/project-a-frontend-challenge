@@ -2,7 +2,11 @@ import React from "react";
 import { Input } from "./atoms/input";
 import { Label } from "./atoms/label";
 import { Header } from "./atoms/header";
+import { Box } from "./atoms/box";
 import { GlobalStyles } from "./style/globalStyles";
+import { ContentContainer } from "./atoms/contentContainer";
+import { AppContainer } from "./atoms/appContainer";
+import { Button } from "./atoms/button";
 
 type PasswordRule = { regex: RegExp; description: string };
 
@@ -17,12 +21,17 @@ const PasswordConfig: PasswordRule[] = [
 ];
 
 export const App: React.FC = () => (
-  <>
+  <AppContainer>
     <GlobalStyles />
     <Header>Registration</Header>
-    <Label>Email</Label>
-    <Input />
-    <Label>Password</Label>
-    <Input />
-  </>
+    <ContentContainer>
+      <Box>
+        <Label>Email</Label>
+        <Input />
+        <Label>Password</Label>
+        <Input type="password" />
+        <Button>Submit</Button>
+      </Box>
+    </ContentContainer>
+  </AppContainer>
 );
