@@ -11,6 +11,6 @@ export const Form = styled('form')({
   }),
 
   ...getStylesForMinWidth(Breakpoints.desktop, {
-    gritTemplateRows: '1fr auto 1fr',
+    gridTemplateRows: 'auto auto auto',
   }),
 });

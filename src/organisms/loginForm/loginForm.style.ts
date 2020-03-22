@@ -66,6 +66,6 @@ export const ButtonContainer = styled('div')({
   ...getStylesForMinWidth(Breakpoints.desktop, {
     gridRow: '3 / 4',
     gridColumn: '2 / 3',
-    marginTop: '1.5rem',
+    marginTop: '1rem',
   }),
 });
