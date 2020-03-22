@@ -58,3 +58,4 @@ In the following I'll discuss some ideas on how to improve the application
 5. The password rule for special characters allows ä, ö, ü, ß, ç, ... as special characters. It may be discussed if that counts or not.
 6. There is no real production config. For a "real" project, there would be a production config that optimizes and minifies the code
 7. For a "real" project server side rendering would be an option, for example by using Next.js
+8. I haven't checked for browser compatibility at all. This should be done as well. I used Google Chrome to test the application

@@ -7,8 +7,12 @@ import { Button } from '../../atoms/button';
 import { checkRules } from '../../utility/criteriaUtil';
 import { checkEmail } from '../../utility/emailUtils';
 import { passwordRules } from '../../config/passwordRules';
-import { EmailInputContainer, PasswordInputContainer } from './inputs.style';
-import { ButtonContainer, CriteriaListContainer } from './formFooter.style';
+import {
+  EmailInputContainer,
+  PasswordInputContainer,
+  ButtonContainer,
+  CriteriaListContainer,
+} from './loginForm.style';
 
 interface LoginFormProps {
   onSubmit?(username: string, password: string): void;
