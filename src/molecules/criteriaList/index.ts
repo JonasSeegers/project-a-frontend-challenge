@@ -1,1 +1,1 @@
-export * from "./criteriaList";
+export * from './criteriaList';

@@ -1,1 +1,1 @@
-export { Criteria } from "./criteria";
+export { Criteria } from './criteria';

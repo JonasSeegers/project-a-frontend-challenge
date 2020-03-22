@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "@emotion/styled";
-import { Criteria } from "../../atoms/criteria";
+import React from 'react';
+import styled from '@emotion/styled';
+import { Criteria } from '../../atoms/criteria';
 
 interface CriteriaListProps {
   descriptions: string[];
@@ -17,19 +17,18 @@ export const CriteriaList: React.FC<CriteriaListProps> = ({
   </StyledUl>
 );
 
-const StyledUl = styled("ul")({
-  "& li": {
-    margin: "0.5rem 0"
+const StyledUl = styled('ul')({
+  '& li': {
+    margin: '0.5rem 0'
   }
 });
 
 const renderCriteria = (
   allDescriptions: string[],
   allFulfilledStates: boolean[]
-) => {
-  return allDescriptions.map((description, index) => (
+) =>
+  allDescriptions.map((description, index) => (
     <Criteria fulfilled={allFulfilledStates[index]} key={`criteria_${index}`}>
       {description}
     </Criteria>
   ));
-};

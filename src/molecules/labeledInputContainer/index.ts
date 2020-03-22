@@ -1,1 +1,1 @@
-export * from "./labeldInputContainer";
+export * from './labeldInputContainer';

@@ -1,26 +1,26 @@
-import React, { useState } from "react";
-import { Form } from "./form.style";
-import { Label } from "../../atoms/label";
-import { Input } from "../../atoms/input";
-import { CriteriaList } from "../../molecules/criteriaList";
-import { Button } from "../../atoms/button";
-import { checkRules } from "../../utility/criteriaUtil";
-import { checkEmail } from "../../utility/emailUtils";
-import { passwordRules } from "../../config/passwordRules";
-import { EmailInputContainer, PasswordInputContainer } from "./inputs.style";
-import { ButtonContainer, CriteriaListContainer } from "./formFooter.style";
+import React, { useState } from 'react';
+import { Form } from './form.style';
+import { Label } from '../../atoms/label';
+import { Input } from '../../atoms/input';
+import { CriteriaList } from '../../molecules/criteriaList';
+import { Button } from '../../atoms/button';
+import { checkRules } from '../../utility/criteriaUtil';
+import { checkEmail } from '../../utility/emailUtils';
+import { passwordRules } from '../../config/passwordRules';
+import { EmailInputContainer, PasswordInputContainer } from './inputs.style';
+import { ButtonContainer, CriteriaListContainer } from './formFooter.style';
 
 interface LoginFormProps {
   onSubmit?(username: string, password: string): void;
 }
 
 export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
-  const [emailValue, setEmailValue] = useState("");
-  const [pwValue, setPwValue] = useState("");
+  const [emailValue, setEmailValue] = useState('');
+  const [pwValue, setPwValue] = useState('');
 
   const checkedRules = checkRules(passwordRules, pwValue);
   const isEveryCriteriaFulfilled = checkedRules.every(
-    criteriaFulfilled => criteriaFulfilled
+    (criteriaFulfilled) => criteriaFulfilled
   );
   const isEmailValid = checkEmail(emailValue);
 
@@ -33,7 +33,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
           id="email"
           type="email"
           name="email"
-          onChange={event => setEmailValue(event.target.value)}
+          onChange={(event) => setEmailValue(event.target.value)}
         />
       </EmailInputContainer>
 
@@ -44,13 +44,13 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
           name="password"
           id="password"
           value={pwValue}
-          onChange={event => setPwValue(event.target.value)}
+          onChange={(event) => setPwValue(event.target.value)}
         />
       </PasswordInputContainer>
 
       <CriteriaListContainer>
         <CriteriaList
-          descriptions={passwordRules.map(rule => rule.description)}
+          descriptions={passwordRules.map((rule) => rule.description)}
           fulfilledStates={checkedRules}
         />
       </CriteriaListContainer>
