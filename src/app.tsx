@@ -7,11 +7,10 @@ import { GlobalStyles } from "./style/globalStyles";
 import { ContentContainer } from "./atoms/contentContainer";
 import { AppContainer } from "./atoms/appContainer";
 import { Button } from "./atoms/button";
-import { Criteria } from "./atoms/criteria";
+import { CriteriaList } from "./molecules/criteriaList";
+import { Rule, checkRules } from "./utility/criteriaUtil";
 
-type PasswordRule = { regex: RegExp; description: string };
-
-const passwordConfig: PasswordRule[] = [
+const passwordConfig: Rule[] = [
   { regex: /.{8,}/, description: "8+ characters" },
   { regex: /.*[a-z].*/, description: "lowercase letter" },
   { regex: /.*[A-Z].*/, description: "uppercase letter" },
@@ -21,17 +20,14 @@ const passwordConfig: PasswordRule[] = [
   { regex: /.*[^A-Za-z\d].*/, description: "special character" }
 ];
 
-const renderCriteria = (testValue: string) => {
-  return passwordConfig.map(({ regex, description }, index) => (
-    <Criteria fulfilled={regex.test(testValue)} key={`criteria_${index}`}>
-      {description}
-    </Criteria>
-  ));
-};
-
 export const App: React.FC = () => {
   const [emailValue, setEmailValue] = useState("");
   const [pwValue, setPwValue] = useState("");
+
+  const checkedRules = checkRules(passwordConfig, pwValue);
+  const isEveryCriteriaFulfilled = checkedRules.every(
+    criteriaFulfilled => criteriaFulfilled
+  );
 
   return (
     <AppContainer>
@@ -44,14 +40,19 @@ export const App: React.FC = () => {
             value={emailValue}
             onChange={event => setEmailValue(event.target.value)}
           />
+
           <Label>Password</Label>
           <Input
             type="password"
             value={pwValue}
             onChange={event => setPwValue(event.target.value)}
           />
-          <Button>Submit</Button>
-          {renderCriteria(pwValue)}
+
+          <Button disabled={!isEveryCriteriaFulfilled}>Submit</Button>
+          <CriteriaList
+            descriptions={passwordConfig.map(rule => rule.description)}
+            fulfilledStates={checkedRules}
+          />
         </Box>
       </ContentContainer>
     </AppContainer>
