@@ -1,12 +1,7 @@
 import styled from '@emotion/styled';
 import { getStylesForMinWidth } from '../../style/mediaQuery';
 import { Breakpoints } from '../../style/constants';
-
-export const LabeledInputsContainer = styled('div')({
-  display: 'flex',
-  flexDirection: 'column',
-  '& input': { margin: '0.75rem 0' },
-});
+import { LabeledInputsContainer } from '../../molecules/labeledInputContainer';
 
 export const EmailInputContainer = styled(LabeledInputsContainer)({
   ...getStylesForMinWidth(Breakpoints.tablet, {

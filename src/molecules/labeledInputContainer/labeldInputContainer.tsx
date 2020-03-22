@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-export const LabeledInputContainer: React.FC = (props) => (
-  <StyledDiv {...props} />
-);
-
-const StyledDiv = styled('div')({});
+export const LabeledInputsContainer = styled('div')({
+  display: 'flex',
+  flexDirection: 'column',
+  '& input': { margin: '0.75rem 0' },
+});
