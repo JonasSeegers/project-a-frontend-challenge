@@ -2,17 +2,6 @@ import styled from "@emotion/styled";
 import { getStylesForMinWidth } from "../../style/mediaQuery";
 import { Breakpoints } from "../../style/constants";
 
-export const InputsRow = styled("div")({
-  display: "flex",
-  flexDirection: "column",
-  ...getStylesForMinWidth(Breakpoints.tablet, {
-    flexDirection: "row-reverse"
-  }),
-  ...getStylesForMinWidth(Breakpoints.desktop, {
-    flexDirection: "row"
-  })
-});
-
 export const LabeledInputsContainer = styled("div")({
   display: "flex",
   flexDirection: "column",

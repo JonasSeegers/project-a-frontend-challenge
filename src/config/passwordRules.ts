@@ -5,10 +5,10 @@ import { Rule } from "../utility/criteriaUtil";
  */
 export const passwordRules: Rule[] = [
   { regex: /.{8,}/, description: "8+ characters" },
-  { regex: /.*[a-z].*/, description: "lowercase letter" },
-  { regex: /.*[A-Z].*/, description: "uppercase letter" },
-  { regex: /.*\d.*/, description: "number" },
-  // this regex matches a character that is neither a letter, nor a digit
-  // \w instead of A-Za-z wouldn't have worked because \w includes underscores
-  { regex: /.*[^A-Za-z\d].*/, description: "special character" }
+  { regex: /[a-z]/, description: "lowercase letter" },
+  { regex: /[A-Z]/, description: "uppercase letter" },
+  { regex: /\d/, description: "number" },
+  // this solution treats ä, ö, ü, ß, ç etc. as special characters
+  // it can be discussed if those letters shouldn't count
+  { regex: /[^\w]|_/, description: "special character" }
 ];

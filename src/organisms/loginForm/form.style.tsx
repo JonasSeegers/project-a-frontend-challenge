@@ -13,6 +13,7 @@ export const Form = styled("form")({
     gridTemplateRows: "auto auto",
     gridColumnGap: "0.75rem"
   }),
+
   ...getStylesForMinWidth(Breakpoints.desktop, {
     gritTemplateColums: "1fr auto 1fr"
   })

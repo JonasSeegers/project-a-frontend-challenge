@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form } from "../../molecules/form";
+import { Form } from "./form.style";
 import { Label } from "../../atoms/label";
 import { Input } from "../../atoms/input";
 import { CriteriaList } from "../../molecules/criteriaList";
@@ -26,7 +26,6 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
 
   return (
     <Form>
-      {/* <InputsRow> */}
       <EmailInputContainer>
         <Label htmlFor="email">Email</Label>
         <Input
@@ -49,7 +48,6 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
         />
       </PasswordInputContainer>
 
-      {/* <FormFooterRow> */}
       <CriteriaListContainer>
         <CriteriaList
           descriptions={passwordRules.map(rule => rule.description)}
