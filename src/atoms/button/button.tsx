@@ -13,5 +13,8 @@ export const Button = styled("button")({
   },
   "&:active": {
     backgroundColor: "#666"
+  },
+  "&:disabled": {
+    backgroundColor: "#999"
   }
 });

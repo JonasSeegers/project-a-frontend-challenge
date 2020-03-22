@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
+import {} from "";
+import { Colors } from "../../style/constants";
 
 interface CriteriaProps {
   fulfilled: boolean;
@@ -9,9 +11,6 @@ interface CriteriaProps {
 // defined as constants to avoid magic numbers which would decrease readability
 const HEAVY_CHECKMARK = "\u2714";
 const HEAVY_BALLOT_X = "\u2718";
-
-const FULFILLED_COLOR = "#459840";
-const NOT_FULFILLED_COLOR = "#881a15";
 
 export const Criteria: React.FC<CriteriaProps> = ({
   fulfilled,
@@ -31,6 +30,6 @@ const StyledLi = styled("li")({
 });
 
 const StyledSpan = styled("span")(({ fulfilled }: { fulfilled: boolean }) => ({
-  color: `${fulfilled ? FULFILLED_COLOR : NOT_FULFILLED_COLOR}`,
+  color: `${fulfilled ? Colors.succesColor : Colors.errorColor}`,
   marginRight: "0.25rem"
 }));

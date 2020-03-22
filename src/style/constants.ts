@@ -3,3 +3,8 @@ export const Typography = {
   copySize: "1rem",
   h1Size: "1.5rem"
 };
+
+export const Colors = {
+  succesColor: "#459840",
+  errorColor: "#881a15"
+};
